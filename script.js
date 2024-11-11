@@ -15,17 +15,17 @@ document.addEventListener('contextmenu', function (event) {
     return false;
 });
 
-// Disable text selection
-document.onselectstart = function() {
-    return false;
-};
+// // Disable text selection
+// document.onselectstart = function() {
+//     return false;
+// };
 
-// Disable copy
-document.oncopy = function() {
-    return false;
-};
+// // Disable copy
+// document.oncopy = function() {
+//     return false;
+// };
 
-// Disable cut
-document.oncut = function() {
-    return false;
-};
+// // Disable cut
+// document.oncut = function() {
+//     return false;
+// };
