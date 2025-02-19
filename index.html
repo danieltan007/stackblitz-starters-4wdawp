@@ -1,142 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="retro">
+<html lang="en">
+
   <head>
-    <title>PAS Informatika</title>
+    <title>PAS Informatika Semester 2</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="script.js"></script>
+    <script type="module" src="theme.js"></script>
     <meta name="description" content="simpe website for high school testing" />
     <meta name="robots" content="noindex, nofollow" />
   </head>
+
   <body>
-    <div class="navbar bg-primary fixed top-0 px-6 z-10">
-      <div class="navbar-start">
-        <div class="dropdown">
-          <div tabindex="0" role="button" class="btn btn-ghost md:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </div>
-          <ul
-            tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-          >
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#pricing">Services</a></li>
-          </ul>
-        </div>
-        <p class="text-2xl text-bold">John Doe</p>
-      </div>
-      <div class="navbar-end hidden md:flex">
-        <ul class="menu menu-horizontal px-1">
-          <li><a href="#Home">Home</a></li>
-          <li><a href="#Pricing">Services</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="hero bg-base-200 min-h-screen" id="Home">
-      <div class="hero-content flex-col-reverse md:flex-row gap-8">
-        <div>
-          <h1 class="text-5xl font-bold">Hello I'm John Doe</h1>
-          <p class="py-6 text-2xl">I'm a Professional Web Developer</p>
-          <button
-            class="btn btn-primary duration-300 transition hover:scale-110"
-          >
-            Hire me
-          </button>
-        </div>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1yeQfau67SgrDBa-T15u2Pvqt6FXBnh6laA&s"
-          class="md:max-w-xl w-max h-max rounded-lg shadow-2xl"
-        />
-      </div>
-    </div>
-
-    <div
-      class="bg-secondary min-h-screen flex justify-center items-center"
-      id="Pricing"
-    >
-      <div>
-        <h1 class="text-4xl font-bold text-center mb-8">My Services</h1>
-
-        <div class="flex flex-wrap md:flex-row gap-6 justify-center">
-          <div class="card bg-base-100 w-96 shadow-xl">
-            <div class="card-body">
-              <h2 class="text-center font-bold text-3xl">Landing Page</h2>
-              <ul class="list-disc list-inside">
-                <li>Basic landing page</li>
-                <li>SEO optimized</li>
-                <li>Finish in up to 3 days</li>
-              </ul>
-              
-              <div class="card-actions text-center justify-center mt-auto">
-                <p class="text-4xl">Starts From : <br> $100</p>
+    <div class="container mx-auto my-8">
+      <div class="flex justify-center items-center h-[90vh]">
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Data Diri</h2>
+            <label class="form-control w-full">
+              <div class="label">
+                <span class="label-text">Pilih Tema</span>
               </div>
-            </div>
-          </div>
-          <div class="card bg-slate-200 w-96 shadow-xl">
-            <div class="card-body">
-              <h2 class="text-center font-bold text-3xl">UI/UX Update and Code Fixing</h2>
-              <ul class="list-disc list-inside">
-                <li>Refactor and fix your code</li>
-                <li>Creating better ui/ux for your app</li>
-                <li>Finish in up to 2 weeks</li>
-              </ul>
 
-              <div class="card-actions text-center justify-center mt-auto">
-                <p class="text-4xl">Starts From : <br> $500</p>
+              <select class="select select-bordered w-full" id="selectTheme">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="cupcake">Cupcake</option>
+                <option value="bumblebee">Bumblebee</option>
+                <option value="emerald">Emerald</option>
+                <option value="corporate">Corporate</option>
+                <option value="cyberpunk">Cyberpunk</option>
+                <option value="business">Business</option>
+              </select>
+            </label>
+
+            <form id="form">
+              <div class="flex flex-col gap-4 justify-center items-center mb-6">
+                <label class="form-control w-full">
+                  <div class="label">
+                    <span class="label-text">Nama :</span>
+                  </div>
+                  <input type="text" placeholder="Type here" class="input input-bordered w-full" id="nama" />
+                  <div class="label">
+                    <span class="label-text-alt">*Nama minimal 3 karakter</span>
+                  </div>
+                </label>
+
+                <label class="form-control w-full">
+                  <div class="label">
+                    <span class="label-text">Kelas :</span>
+                  </div>
+                  <select class="select select-bordered w-full" id="kelas">
+                    <option disabled selected value="">Pilih Kelas</option>
+                    <option value="Informatika 1">Informatika 1</option>
+                    <option value="Informatika 3">Informatika 3</option>
+                    <option value="Informatika 4">Informatika 4</option>
+                  </select>
+                </label>
+
+                <label class="form-control w-full">
+                  <div class="label">
+                    <span class="label-text">Pesan :</span>
+                  </div>
+                  <textarea class="textarea textarea-bordered w-full" placeholder="Type here" id="pesan"></textarea>
+                  <div class="label">
+                    <span class="label-text-alt">*Pesan minimal 3 karakter</span>
+                  </div>
+                </label>
               </div>
-            </div>
-          </div>
-          <div class="card bg-base-100 w-96 shadow-xl">
-            <div class="card-body">
-              <h2 class="text-center font-bold text-3xl">Complex Web App</h2>
-              <ul class="list-disc pl-5">
-                <li>Creating responsive complex full stack app</li>
-                <li>Deployment in your own server</li>
-                <li>Auto DB backup every day</li>
-              </ul>
-              
-              <div class="card-actions text-center justify-center mt-auto">
-                <p class="text-4xl">Starts From : <br> $1000</p>
+
+              <div class="card-actions justify-start">
+                <button class="btn btn-primary rounded-lg" type="submit">Kirim</button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
-    </div>
-
-    <footer class="footer footer-center bg-primary text-primary-content py-2">
-      <p>Copyright © 2024 - All right reserved</p>
-      <nav>
-        <div class="grid grid-flow-col gap-4">
-          <a href="#Home">
-           Home
-          </a>
-          <a href="#Pricing">
-            Services
-          </a>
-        </div>
-      </nav>
-    </footer>
   </body>
+
 </html>
